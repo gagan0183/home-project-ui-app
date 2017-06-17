@@ -24,21 +24,21 @@
                     <div class="container">
                         <h1 class="alignCenter">Add Book</h1>
                         <hr />
-                        <form name="createBookForm" class="form-horizontal">
+                        <form name="createBookForm" class="form-horizontal" ng-class="selectClass()">
                             <div class="form-group has-feedback">
                                 <label class="control-label col-sm-2" for="bookName">Name:</label>
                                 <div class="col-sm-10">
                                     <input id="bookName" class="form-control" name="bookName" type="text" ng-model="book.name" placeholder="Name of your book..." required/>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$invalid"></span>
+                                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$valid"></span>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$invalid"></span>
                                 </div>
                             </div>
                             <div class="form-group has-feedback">
                                <label class="control-label col-sm-2" for="bookIsbn">Isbn:</label>
                                <div class="col-sm-10">
                                    <input id="bookIsbn" class="form-control" name="bookIsbn" type="text" ng-model="book.isbn" placeholder="ISBN of your book..." required/>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$invalid"></span>
+                                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$valid"></span>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$invalid"></span>
                                </div>
                             </div>
                             <div class="form-group has-feedback">
@@ -57,16 +57,16 @@
                                 <label class="control-label col-sm-2" for="bookType">Type:</label>
                                 <div class="col-sm-10">
                                     <input id="bookType" class="form-control" name="bookType" type="text" ng-model="book.type" placeholder="Type of book..." required/>
-                                   <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$invalid"></span>
+                                   <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$valid"></span>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$invalid"></span>
                                 </div>
                             </div>
                             <div class="form-group has-feedback">
                                 <label class="control-label col-sm-2" for="bookAuthor">Author:</label>
                                 <div class="col-sm-10">    
                                     <input id="bookAuthor" class="form-control" name="bookAuthor" type="text" ng-model="book.author" placeholder="Author of book..." required/>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$invalid"></span>
+                                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$valid"></span>
+                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$invalid"></span>
                                 </div>
                             </div>
                             <div class="form-group has-feedback">

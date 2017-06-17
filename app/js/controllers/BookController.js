@@ -7,4 +7,13 @@ app.controller('BookController', function($scope) {
             console.log("save API request");
         }
     };
+
+    $scope.selectClass = function() {
+        if(createBookForm.bookName.$dirty && createBookForm.bookName.$valid) {
+            return "has-success";
+        }
+        else if(createBookForm.bookName.$dirty && createBookForm.bookName.$invalid)  {
+            return "has-error";
+        }
+    };
 });
