@@ -1,7 +1,6 @@
 /* app css stylesheet */
 body {
   background-color: #52575c;
-  cursor: pointer;
 }
 
 .homeicon {
@@ -17,7 +16,7 @@ body {
 }
 
 label, h1 {
-    color: #cfd2da;
+    color: #9d9d9d;
 }
 
 .checkColor {
@@ -26,4 +25,8 @@ label, h1 {
 
 .crossColor {
     color: darkred;
+}
+
+.lineWidth {
+    width: 15%;
 }

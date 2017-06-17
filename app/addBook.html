@@ -9,21 +9,25 @@
     </head>
 
     <body ng-cloak>
-        <div class="container-fluid">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <ul class="nav">
-                        <li>
-                            <i class="fa fa-book fa-3x homeicon" aria-hidden="true"></i>
-                        </li>
+       <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Store</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Page 1</a></li>
+                        <li><a href="#">Page 2</a></li>
+                        <li><a href="#">Page 3</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="container">
+            </nav>
+        
+            <div class="container-fluid">
                 <div ng-controller="BookController" style="padding-left: 20px; padding-right: 20px">
                     <div class="container">
                         <h1 class="alignCenter">Add Book</h1>
-                        <hr />
+                        <hr class="lineWidth" />
                         <form name="createBookForm" class="form-horizontal" ng-class="selectClass()">
                             <div class="form-group has-feedback">
                                 <label class="control-label col-sm-2" for="bookName">Name:</label>
@@ -76,14 +80,13 @@
                                 </div>
                             </div>
                             <div class="form-group has-feedback">
-                                <button type="submit" ng-click="savebook(book, createBookForm)" class="btn btn-primary col-sm-offset-6 btn btn-success" ng-disabled="createBookForm.$invalid">Save</button>
-                                <button type="button" ng-click="cancel()" class="btn btn-default">Cancel</button>
+                                <button type="submit" class="btn btn-success col-sm-offset-4 col-sm-2" ng-click="savebook(book, createBookForm)" class="btn btn-success" ng-disabled="createBookForm.$invalid">Save</button>
+                                <button type="button" class="btn btn-default col-sm-offset-1 col-sm-2" ng-click="cancel()" class="btn btn-default">Cancel</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
         <script src="/jquery/dist/jquery.min.js"></script>
         <script src="/underscore/underscore-min.js"></script>
         <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
