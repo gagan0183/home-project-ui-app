@@ -1,10 +1,26 @@
 var app = angular.module('app');
 
-app.controller('BookController', function($scope) {
+app.controller('BookController', function($scope, $filter, springService) {
+    $scope.progress = false;
     $scope.savebook = function(book, createBookForm) {
-        console.log(createBookForm.name);
+        $scope.progress = true;
         if(createBookForm.$valid) {
             console.log("save API request");
+            var data = {
+                "isbn": book.isbn,
+                "bookName": book.name,
+                "type": book.type,
+                "author": book.author,
+                "startDate": $filter('date')(book.startDate, 'yyyy-MM-dd'),
+                "completeDate": $filter('date')(book.endDate, 'yyyy-MM-dd'),
+                "revision": book.revision === undefined ? false : true
+            };
+            springService.postBook(data).then(function(response) {
+                $scope.progress = false;
+                console.log(response.data);
+            }, function(response) {
+                console.log("error");
+            });
         }
     };
 
