@@ -2,7 +2,6 @@ var request = require('request');
 
 module.exports.postBook = function(req, res) {
     var data = req.body;
-    console.log("in node : " + JSON.stringify(data));
     var response = request({
          method: 'POST',
          url: 'http://192.168.1.153:8080/book',

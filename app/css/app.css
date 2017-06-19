@@ -30,3 +30,9 @@ label, h1 {
 .lineWidth {
     width: 15%;
 }
+
+.wait {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+}

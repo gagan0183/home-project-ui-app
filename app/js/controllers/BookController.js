@@ -1,9 +1,9 @@
 var app = angular.module('app');
 
-app.controller('BookController', function($scope, $filter, springService) {
-    $scope.progress = false;
+app.controller('BookController', function($scope, $filter, $log, modalService, springService) {
+    $scope.waiter = false;
     $scope.savebook = function(book, createBookForm) {
-        $scope.progress = true;
+        $scope.waiter = true;
         if(createBookForm.$valid) {
             console.log("save API request");
             var data = {
@@ -16,10 +16,12 @@ app.controller('BookController', function($scope, $filter, springService) {
                 "revision": book.revision === undefined ? false : true
             };
             springService.postBook(data).then(function(response) {
-                $scope.progress = false;
-                console.log(response.data);
+                $scope.waiter = false;
+                var resp = JSON.parse(JSON.stringify(response));
+                $log.info("response : " + JSON.stringify(resp.data));
+                modalService.showAlert('Awesome!', resp.data.successMessage);
             }, function(response) {
-                console.log("error");
+                $log.error(JSON.stringify(response));
             });
         }
     };

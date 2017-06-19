@@ -30,9 +30,6 @@
                     <div class="container">
                         <h1 class="alignCenter">Add Book</h1>
                         <hr class="lineWidth" />
-                        <div layout="row" layout-sm="column" layout-align="space-around" ng-show="">
-                                <md-progress-circular md-mode="indeterminate" md-diameter="100"></md-progress-circular>
-                        </div>
                         <form name="createBookForm" class="form-horizontal" ng-class="selectClass()">
                             <div class="form-group has-feedback">
                                 <label class="control-label col-sm-2" for="bookName">Name:</label>
@@ -92,6 +89,10 @@
                     </div>
                 </div>
             </div>
+        
+        <div layout="row" layout-sm="column" layout-align="space-around" class="wait" ng-show="waiter">
+            <md-progress-circular md-mode="indeterminate"   class="md-warn md-hue-1"  md-diameter="90"></md-progress-circular>
+        </div>
         <script src="/jquery/dist/jquery.min.js"></script>
         <script src="/underscore/underscore-min.js"></script>
         <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -103,5 +104,6 @@
         <script src="/js/app.js"></script>
         <script src="/js/controllers/BookController.js"></script>
         <script src="/js/services/SpringService.js"></script>
+        <script src="/js/services/modalService.js"></script>
     </body>
 </html>
