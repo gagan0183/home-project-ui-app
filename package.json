@@ -12,15 +12,8 @@
   "author": "Gagan",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.4",
-    "angular-material": "^1.1.4",
-    "angular-resource": "^1.6.4",
-    "angular-route": "^1.6.4",
-    "angular-sanitize": "^1.6.4",
     "body-parser": "^1.13.1",
-    "bootstrap": "^3.3.7",
     "express": "4.13.0",
-    "jquery": "^3.2.1",
     "request": "^2.81.0",
     "underscore": "^1.8.3"
   }

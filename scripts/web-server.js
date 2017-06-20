@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(rootPath + '/app'));
 app.use(express.static(rootPath + '/node_modules'));
+app.use(express.static(rootPath + '/bower_components'));
 
 app.post('/api/book', bController.postBook);
 

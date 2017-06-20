@@ -1,0 +1,33 @@
+{
+  "name": "homeprojectuiapp",
+  "description": "This project is a ui app for backend application developed in spring.",
+  "main": "index.html",
+  "authors": [
+    "Gagan"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "home",
+    "homeproject"
+  ],
+  "homepage": "https://github.com/gagan0183/home-project-ui-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "underscore": "^1.8.3",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "angular-aria": "^1.6.4",
+    "angular-messages": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "font-awesome": "^4.7.0"
+  }
+}
