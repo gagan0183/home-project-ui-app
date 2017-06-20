@@ -1,108 +1,62 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="app">
-    <head>
-        <meta charset="utf-8">
-        <title>book Registration</title>
-        <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/app.css">
-        <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/angular-material/angular-material.min.css">
-    </head>
-
-    <body ng-cloak>
-       <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">Store</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Page 1</a></li>
-                        <li><a href="#">Page 2</a></li>
-                        <li><a href="#">Page 3</a></li>
-                    </ul>
-                </div>
-            </nav>
-        
-            <div class="container-fluid">
-                <div ng-controller="BookController" style="padding-left: 20px; padding-right: 20px">
-                    <div class="container">
-                        <h1 class="alignCenter">Add Book</h1>
-                        <hr class="lineWidth" />
-                        <form name="createBookForm" class="form-horizontal" ng-class="selectClass()">
-                            <div class="form-group has-feedback">
-                                <label class="control-label col-sm-2" for="bookName">Name:</label>
-                                <div class="col-sm-10">
-                                    <input id="bookName" class="form-control" name="bookName" type="text" ng-model="book.name" placeholder="Name of your book..." required/>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$invalid"></span>
-                                </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                               <label class="control-label col-sm-2" for="bookIsbn">Isbn:</label>
-                               <div class="col-sm-10">
-                                   <input id="bookIsbn" class="form-control" name="bookIsbn" type="text" ng-model="book.isbn" placeholder="ISBN of your book..." required/>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$invalid"></span>
-                               </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <label class="control-label col-sm-2" for="bookStartDate">Start date:</label>
-                                <div class="col-sm-10">
-                                    <input id="bookStartDate" class="form-control" name="bookStartDate" type="date" ng-model="book.startDate" name="startDate" placeholder="format (mm/dd/yyyy)..." required/>
-                                </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <label class="control-label col-sm-2" for="endDate">End date:</label>
-                                <div class="col-sm-10">
-                                    <input id="bookEndDate" class="form-control" name="bookEndDate" type="date" ng-model="book.endDate" placeholder="format (mm/dd/yyyy)..." required/>
-                                </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <label class="control-label col-sm-2" for="bookType">Type:</label>
-                                <div class="col-sm-10">
-                                    <input id="bookType" class="form-control" name="bookType" type="text" ng-model="book.type" placeholder="Type of book..." required/>
-                                   <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$invalid"></span>
-                                </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <label class="control-label col-sm-2" for="bookAuthor">Author:</label>
-                                <div class="col-sm-10">    
-                                    <input id="bookAuthor" class="form-control" name="bookAuthor" type="text" ng-model="book.author" placeholder="Author of book..." required/>
-                                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$valid"></span>
-                                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$invalid"></span>
-                                </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <label class="control-label col-sm-2" name="revision">Revisions:</label>
-                                <div class="col-sm-10">
-                                    <input id="bookRevision" class="form-check" type="checkbox" ng-model="book.revision"/>
-                                </div>
-                            </div>
-                            <div class="form-group has-feedback">
-                                <button type="submit" class="btn btn-success col-sm-offset-4 col-sm-2" ng-click="savebook(book, createBookForm)" class="btn btn-success" ng-disabled="createBookForm.$invalid">Save</button>
-                                <button type="button" class="btn btn-default col-sm-offset-1 col-sm-2" ng-click="cancel()" class="btn btn-default">Cancel</button>
-                            </div>
-                        </form>
-                    </div>
+<div style="padding-left: 20px; padding-right: 20px">
+    <div class="container">
+        <h1 class="alignCenter">Add Book</h1>
+        <hr class="lineWidth" />
+        <form name="createBookForm" class="form-horizontal" ng-class="selectClass()">
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-2" for="bookName">Name:</label>
+                <div class="col-sm-10">
+                    <input id="bookName" class="form-control" name="bookName" type="text" ng-model="book.name" placeholder="Name of your book..." required/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$valid"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookName.$dirty && createBookForm.bookName.$invalid"></span>
                 </div>
             </div>
-        
-        <div layout="row" layout-sm="column" layout-align="space-around" class="wait" ng-show="waiter">
-            <md-progress-circular md-mode="indeterminate"   class="md-warn md-hue-1"  md-diameter="90"></md-progress-circular>
-        </div>
-        <script src="/jquery/dist/jquery.min.js"></script>
-        <script src="/underscore/underscore-min.js"></script>
-        <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="/angular/angular.min.js"></script>
-        <script src="/angular-animate/angular-animate.min.js"></script>
-        <script src="/angular-aria/angular-aria.min.js"></script>
-        <script src="/angular-messages/angular-messages.min.js"></script>
-        <script src="/angular-material/angular-material.min.js"></script>
-        <script src="/js/app.js"></script>
-        <script src="/js/controllers/BookController.js"></script>
-        <script src="/js/services/SpringService.js"></script>
-        <script src="/js/services/modalService.js"></script>
-    </body>
-</html>
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-2" for="bookIsbn">Isbn:</label>
+                <div class="col-sm-10">
+                    <input id="bookIsbn" class="form-control" name="bookIsbn" type="text" ng-model="book.isbn" placeholder="ISBN of your book..." required/>
+                        <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$valid"></span>
+                        <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookIsbn.$dirty && createBookForm.bookIsbn.$invalid"></span>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-2" for="bookStartDate">Start date:</label>
+                <div class="col-sm-10">
+                    <input id="bookStartDate" class="form-control" name="bookStartDate" type="date" ng-model="book.startDate" name="startDate" placeholder="format (mm/dd/yyyy)..." required/>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-2" for="endDate">End date:</label>
+                <div class="col-sm-10">
+                    <input id="bookEndDate" class="form-control" name="bookEndDate" type="date" ng-model="book.endDate" placeholder="format (mm/dd/yyyy)..." required/>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-2" for="bookType">Type:</label>
+                <div class="col-sm-10">
+                    <input id="bookType" class="form-control" name="bookType" type="text" ng-model="book.type" placeholder="Type of book..." required/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$valid"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookType.$dirty && createBookForm.bookType.$invalid"></span>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <label class="control-label col-sm-2" for="bookAuthor">Author:</label>
+                <div class="col-sm-10">    
+                    <input id="bookAuthor" class="form-control" name="bookAuthor" type="text" ng-model="book.author" placeholder="Author of book..." required/>
+                    <span class="glyphicon glyphicon-ok form-control-feedback checkColor" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$valid"></span>
+                    <span class="glyphicon glyphicon-remove form-control-feedback crossColor" ng-show="createBookForm.bookAuthor.$dirty && createBookForm.bookAuthor.$invalid"></span>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+            <label class="control-label col-sm-2" name="revision">Revisions:</label>
+                <div class="col-sm-10">
+                    <input id="bookRevision" class="form-check" type="checkbox" ng-model="book.revision"/>
+                </div>
+            </div>
+            <div class="form-group has-feedback">
+                <button type="submit" class="btn btn-success col-sm-offset-4 col-sm-2" ng-click="savebook(book, createBookForm)" class="btn btn-success" ng-disabled="createBookForm.$invalid">Save</button>
+                <button type="button" class="btn btn-default col-sm-offset-1 col-sm-2" ng-click="cancel()" class="btn btn-default">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
