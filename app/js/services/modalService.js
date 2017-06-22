@@ -1,6 +1,6 @@
 var app = angular.module('app');
 
-app.factory('modalService', function($mdDialog, $window) {
+app.factory('modalService', function($mdDialog, $window, $state) {
    
    function showAlert(title, content) {
         $mdDialog.show(
@@ -12,7 +12,7 @@ app.factory('modalService', function($mdDialog, $window) {
             .ariaLabel('Alert Dialog Demo')
             .ok('Got it!')
         ).finally(function() {
-            $window.location.reload();
+            $state.reload();
         });
     }
 

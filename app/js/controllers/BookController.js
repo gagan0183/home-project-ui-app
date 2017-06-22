@@ -5,7 +5,7 @@ app.controller('BookController', function($scope, $filter, $log, modalService, s
     $scope.savebook = function(book, createBookForm) {
         $scope.waiter = true;
         if(createBookForm.$valid) {
-            console.log("save API request");
+            $log.info("save API request");
             var data = {
                 "isbn": book.isbn,
                 "bookName": book.name,
@@ -22,6 +22,7 @@ app.controller('BookController', function($scope, $filter, $log, modalService, s
                 modalService.showAlert('Awesome!', resp.data.successMessage);
             }, function(response) {
                 $log.error(JSON.stringify(response));
+                modalService.showAlert('Error!', 'Unable to call the API');
             });
         }
     };

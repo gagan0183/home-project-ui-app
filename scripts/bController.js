@@ -10,6 +10,11 @@ module.exports.postBook = function(req, res) {
             'Access-Control-Allow-Origin': 'http://192.168.1.153:8080'
          }
     }, function(err, response, body) {
+        if(err) {
+            res.status(400).send({
+                message: 'This is an error!'
+            });
+        }
         res.send(JSON.stringify(body));
     });
 };
